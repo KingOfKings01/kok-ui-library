@@ -1,0 +1,95 @@
+:root {
+  --color-primary-blue: #0241ed;
+  --color-gray-300: #d1d5db;
+  --color-gray-700: #4b5563;
+  --color-red-500: #ef4444;
+  --color-red-600: #dc2626;
+  --color-white: #ffffff;
+  --color-black: #000000;
+}
+
+.labelWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem; 
+}
+
+.labelSpan {
+  font-size: 0.875rem; 
+  font-weight: 500; 
+  color: var(--color-gray-700);
+}
+
+.requiredStar {
+  color: var(--color-red-500);
+  font-size: 1.25rem; 
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-white);
+  padding: 0.5rem 1rem; 
+  border-radius: 8px; 
+  font-size: 1rem;
+  border: 2px solid var(--color-gray-300);
+  transition: border-color 0.2s ease-in-out;
+}
+
+
+.inputWrapper:focus-within {
+  border-color: var(--color-primary-blue);
+}
+
+.inputWrapperError {
+  border-color: var(--color-red-500) !important;
+}
+
+.inputWrapper[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+.countryCodeSpan {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 0.5rem;
+  border-right: 1px solid var(--color-gray-300);
+  color: var(--color-gray-300);
+  transition: color 0.2s, border-right-color 0.2s;
+}
+
+
+.countryCodeSpanFocused {
+  color: var(--color-black) !important;
+  border-right-color: var(--color-black) !important;
+}
+
+.inputElement {
+  
+  padding: 0 0.5rem; 
+  padding-left: 0.5rem; 
+  border: none;
+  background: transparent; 
+}
+
+.inputElement:focus {
+  outline: none; 
+}
+
+
+.errorText {
+  font-size: 0.875rem; 
+  color: var(--color-red-600);
+  display: flex;
+  gap: 0.25rem; 
+  margin-top: 0.25rem; 
+  align-items: center; 
+}
+
+
+.errorText svg path {
+  fill: #da0000;
+}

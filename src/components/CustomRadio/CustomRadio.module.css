@@ -1,0 +1,83 @@
+/* Define the rotation and expansion animation */
+@keyframes radio-bounce {
+  0% { transform: scale(0); }
+  60% { transform: scale(1.2); } /* Overshoot for the bounce effect */
+  100% { transform: scale(1); }
+}
+
+/* --- Base Container & State --- */
+
+.customRadio {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  /* Default color for the outline */
+  color: #333333; 
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* --- Hidden Input --- */
+
+.hiddenInput {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* --- Visual Container --- */
+
+.visualContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- Inner Dot Styles --- */
+
+.dot {
+  fill: #0241ED;
+  /* Crucial: Set the transformation origin to the center of the 32x32 viewBox (16, 16) */
+  transform-origin: 16px 16px; 
+}
+
+/* Class applied when checked=true, triggering the bounce */
+.dotAnimated {
+  /* Applying the animation */
+  animation: radio-bounce 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  /* Ensures the final state after animation is scale(1) */
+  transform: scale(1); 
+}
+
+/* Class applied when checked=false, hiding the dot */
+.dotHidden {
+  /* Explicitly set the scale to 0 for a clean start/end point */
+  transform: scale(0);
+  /* Use transition to smooth the disappearance when unchecked */
+  transition: transform 0.2s ease-out; 
+}
+
+/* --- Size Classes (Kept for completeness) --- */
+/* These classes are here for potential size-specific styling but are empty by default */
+.size-sm {}
+.size-md {}
+.size-lg {}
+
+/* --- Checked/Unchecked Color States --- */
+
+.checked {
+  /* Change outline color when checked */
+  color: #0241ED; 
+}
+
+.unchecked {
+  /* Default outline color when unchecked */
+  color: #333333; 
+}

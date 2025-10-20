@@ -1,0 +1,80 @@
+.labelContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.baseInput {
+  padding: 8px 16px; 
+  border-radius: 8px; 
+  font-size: 1rem; 
+  border-width: 2px; 
+  border-style: solid;
+  outline: none; 
+  transition: border-color 0.15s ease-in-out; 
+}
+
+.baseInput:disabled {
+  opacity: 0.5; 
+  cursor: not-allowed; 
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #c4c1bc;
+  opacity: 1; 
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #c4c1bc;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #c4c1bc;
+  opacity: 1;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #c4c1bc;
+}
+
+.defaultBorder {
+  border-color: #c4c1bc; 
+}
+.defaultBorder:focus {
+  border-color: #3766E5; 
+}
+
+.errorBorder {
+  border-color: #DA0000; 
+}
+.errorBorder:focus {
+  border-color: #DA0000; 
+}
+
+.labelSpan {
+  font-size: 0.875rem; 
+  font-weight: 500; 
+  color: #333333; 
+}
+
+.requiredStar {
+  color: #DA0000; 
+  font-size: 1.25rem; 
+  margin-left: 4px; 
+}
+
+.errorText {
+  font-size: 0.875rem; 
+  color: #DA0000; 
+  display: flex;
+  align-items: center; 
+  gap: 4px;
+}
+
+.errorIcon {
+  flex-shrink: 0;  
+}

@@ -1,6 +1,5 @@
 .base {
-  padding: 0.25rem 1rem;
-  border-radius: 8px;
+  border-radius: 14px;
   font-weight: 600;
   font-size: 1rem;
   white-space: nowrap;
@@ -10,16 +9,16 @@
 }
 
 .size-s {
-  min-width: 0%;
+  padding: 10px 1rem;
 }
 .size-m {
-  min-width: 15%;
+  padding: 10px 2rem;
 }
 .size-l {
-  min-width: 20%;
+  padding: 10px 3rem;
 }
 .size-xl {
-  min-width: 30%;
+  padding: 10px 6rem;
 }
 
 /* Variants */

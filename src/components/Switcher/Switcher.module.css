@@ -1,0 +1,57 @@
+/* Switcher.module.css */
+
+/* Variables for colors only */
+:root {
+  --color-border-default: #e5e7eb;
+  --color-bg-transparent: transparent;
+  --color-pill-primary: #0152FF;
+  --color-text-active: #fff;
+  --color-text-inactive: #333;
+}
+
+/* Wrapper div styles */
+.switcherWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--color-border-default);
+  padding: 0.25rem;
+  min-width: 120px;
+  overflow: hidden;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  box-sizing: border-box;
+}
+
+/* Base style for the sliding pill */
+.slidingPill {
+  position: absolute;
+  background-color: var(--color-pill-primary);
+  border-radius: 9999px;
+  transition: left 0.4s ease;
+  z-index: 1;
+}
+
+/* Base style for the button labels */
+.switcherButton {
+  flex: 1;
+  z-index: 2;
+  background: var(--color-bg-transparent);
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  border-radius: 9999px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* Active and inactive text colors applied dynamically */
+.textInactive {
+  color: var(--color-text-inactive);
+}
+
+.textActive {
+  color: var(--color-text-active);
+}

@@ -1,0 +1,98 @@
+/* Variables for consistency */
+:root {
+    --color-blue: #0850fd;
+    --color-dark: #333333;
+    --color-text-content: #ffffff; /* Renamed to be explicit about content color */
+    --padding-vertical: 15px;
+    --padding-horizontal: 20px;
+    --radius: 10px;
+    --tail-offset-vertical: -10px;
+    --tail-offset-horizontal: 5%;
+    --font-family: sans-serif;
+}
+
+/* --- Main Bubble Container --- */
+.messageBox {
+    padding: var(--padding-vertical) var(--padding-horizontal);
+    border-radius: var(--radius);
+    position: relative;
+    min-width: 200px;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    font-family: var(--font-family);
+    /* Set the text content color explicitly here */
+    color: var(--color-text-content); 
+}
+
+/* Theme Classes */
+
+/* FIX: Set 'color' property to the background color. 
+   This 'color' value is inherited by the SVG's fill="currentColor". 
+   The 'background-color' sets the bubble's fill. */
+.theme-blue {
+    background-color: var(--color-blue);
+    color: var(--color-blue); /* Sets currentColor for the tail SVG to blue */
+}
+
+.theme-dark {
+    background-color: var(--color-dark);
+    color: var(--color-dark); /* Sets currentColor for the tail SVG to dark */
+}
+
+/* FIX: Override text color to white only for the text span to ensure contrast. 
+   This targets the direct text content of the message box. */
+.messageBox > span {
+    color: var(--color-text-content);
+}
+
+.align-left {
+    align-self: flex-start;
+}
+
+.align-right {
+    align-self: flex-end;
+}
+
+/* --- Tail SVG Container --- */
+.tailContainer {
+    position: absolute;
+    /* This inherits the theme's background color via the parent's 'color' property */
+    color: inherit;
+    line-height: 0;
+}
+
+.corner-top-left {
+    top: var(--tail-offset-vertical);
+    left: var(--tail-offset-horizontal);
+}
+
+.corner-top-right {
+    top: var(--tail-offset-vertical);
+    right: var(--tail-offset-horizontal);
+}
+
+.corner-bottom-left {
+    bottom: var(--tail-offset-vertical);
+    left: var(--tail-offset-horizontal);
+}
+
+.corner-bottom-right {
+    bottom: var(--tail-offset-vertical);
+    right: var(--tail-offset-horizontal);
+}
+
+/* --- Tail SVG (Rotation) --- */
+.tail {
+    display: block;
+    transition: transform 200ms ease;
+    transform-origin: center;
+}
+
+.tailDefault {
+    transform: rotate(0deg);
+}
+
+.tailBottom {
+    transform: rotate(180deg);
+}
